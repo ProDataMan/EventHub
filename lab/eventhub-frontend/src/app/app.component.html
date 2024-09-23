@@ -1,0 +1,18 @@
+<!-- app.component.html -->
+<div class="container mt-4">
+  <h1 class="mb-4">{{ title }}</h1>
+  <div class="form-group">
+    <input 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="searchTerm" 
+      (input)="onSearchTermChange()" 
+      placeholder="Search events..." 
+    />
+  </div>
+  <ul class="list-group mt-3">
+    <li *ngFor="let event of filteredEvents" class="list-group-item">
+      {{ event | json }}
+    </li>
+  </ul>
+</div>
